@@ -1,0 +1,33 @@
+C:\> lxrun /setdefaultuser root
+C:\> bash.exe
+$ passwd username
+$ exit
+C:\> lxrun.exe /setdefaultuser username
+C:\> ubuntu.exe /?
+
+Launches or configures a linux distribution.
+
+Usage:
+    <no args>
+      - Launches the distro's default behavior. By default, this launches your default shell.
+
+    run <command line>
+      - Run the given command line in that distro, using the default configuration.
+      - Everything after `run ` is passed to the linux LaunchProcess cal
+
+    config [setting [value]]
+      - Configure certain settings for this distro.
+      - Settings are any of the following (by default)
+        - `--default-user <username>`: Set the default user for this distro to <username>
+
+    clean
+      - Uninstalls the distro. The appx remains on your machine. This can be
+        useful for "factory resetting" your instance. This removes the linux
+        filesystem from the disk, but not the app from your PC, so you don't
+        need to redownload the entire tar.gz again.
+
+    help
+      - Print this usage message.
+      C:\> ubuntu config --default-user root
+      $ passwd username
+      C:\> ubuntu config --default-user username
